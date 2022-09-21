@@ -1,50 +1,4 @@
 #include<stdio.h>
-int tenTh(int);
-int oneTh(int);
-int hun(int);
-int ten(int);
-int switchfuncTens(int);
-int switchfuncOnes(int);
-int switchfuncTenAbv(int);
-int digit(int);
-int main()
-{	
-	printf("!!!Welcome to the program!!!\n");
-	printf("This program prints the given number in words.\n");
-	int n = 0;
-	printf("Enter any number: ");
-	scanf("%d",&n);
-	int backup = n ;
-	printf("%d = ",n);
-	if(n >= 10000)
-	{
-		n = tenTh(n);
-	}
-	
-	if (backup/10000!=1)
-	{	
-		if(n>=1000)
-		{
-			n = oneTh(n);	
-			printf("Thousand ");	
-		}
-		
-	}
-	int oneTh = n/1000;
-	n = n - (oneTh * 1000);
-	
-	if(n>=100)
-	{
-		n = hun(n);
-	}
-	
-	if(n>=10)
-	{
-		n = ten(n);
-	}
-	
-	switchfuncOnes(n);
-}
 
 int tenTh(int n )
 {
@@ -169,5 +123,44 @@ int switchfuncTenAbv(int n)
 		case 19 : printf("Nineteen ");
 		break;
 	}
+}
+
+int main()
+{	
+	printf("!!!Welcome to the program!!!\n");
+	printf("This program prints the given number in words.\n");
+	int n = 0;
+	printf("Enter any number: ");
+	scanf("%d",&n);
+	int backup = n ;
+	printf("%d = ",n);
+	if(n >= 10000)
+	{
+		n = tenTh(n);
+	}
+	
+	if (backup/10000!=1)
+	{	
+		if(n>=1000)
+		{
+			n = oneTh(n);	
+			printf("Thousand ");	
+		}
+		
+	}
+	int oneTh = n/1000;
+	n = n - (oneTh * 1000);
+	
+	if(n>=100)
+	{
+		n = hun(n);
+	}
+	
+	if(n>=10)
+	{
+		n = ten(n);
+	}
+	
+	switchfuncOnes(n);
 }
 
